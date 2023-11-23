@@ -12,14 +12,13 @@
         </thead>
         <tbody>
             @foreach ($comics as $comic)
-                <a href="{{ route('home') }}">
-                    <tr>
-                        <td>{{ $comic->id }}</td>
-                        <td>{{ $comic->title }}</td>
-                        <td>{{ $comic->type }}</td>
-                        <td>{{ $comic->price }}</td>
-                    </tr>
-                </a>
+                <tr>
+                    <td>{{ $comic->id }}</td>
+                    <td>{{ $comic->title }}</td>
+                    <td>{{ $comic->type }}</td>
+                    <td>{{ $comic->price }}</td>
+                    <td><a class="btn btn-primary" href="{{ route('comics.show', $comic->id) }}">Detail</a></td>
+                </tr>
             @endforeach
 
         </tbody>
