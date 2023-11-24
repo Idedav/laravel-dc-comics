@@ -17,7 +17,17 @@
                     <td>{{ $comic->title }}</td>
                     <td>{{ $comic->type }}</td>
                     <td>{{ $comic->price }}</td>
-                    <td><a class="btn btn-primary" href="{{ route('comics.show', $comic->id) }}">Detail</a></td>
+                    <td>
+                        <a class="btn btn-primary" href="{{ route('comics.show', $comic->id) }}">
+                            <i class="fa-solid fa-info"></i>
+                        </a>
+                        <a class="btn btn-warning" href="{{ route('comics.edit', $comic->id) }}">
+                            <i class="fa-solid fa-pencil"></i>
+                        </a>
+                        <a class="btn btn-danger" href="#">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
                 </tr>
             @endforeach
 
