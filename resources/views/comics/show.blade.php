@@ -20,6 +20,19 @@
             <p>{{ $comic->artists }}</p>
             <h3>Writers</h3>
             <p>{{ $comic->writers }}</p>
+            <div class="container-fluid d-flex">
+                <a class="btn btn-warning me-2" href="{{ route('comics.edit', $comic->id) }}">
+                    <i class="fa-solid fa-pencil"></i>
+                </a>
+                <form action="{{ route('comics.destroy', $comic) }}" method="POST"
+                    onsubmit="return confirm('Sei sicuro di voler eliminare {{ $comic->title }}?')">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 @endsection
